@@ -1,0 +1,22 @@
+{
+  "name": "bit-logger",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "bit-builder",
+    "test": "set NODE_CONFIG_DIR=build/config && npm run build && mocha tst/test.js"
+  },
+  "author": "Andy Lim <andytlim@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "bit-builder": "github:toka-io/bit-builder",
+    "chai": "^4.0.2",
+    "mocha": "^3.4.2",
+    "sinon": "^4.0.1"
+  },
+  "dependencies": {
+    "bit-config": "github:toka-io/bit-config",
+    "winston": "^2.4.0"
+  }
+}
