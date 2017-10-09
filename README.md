@@ -1,24 +1,17 @@
 ## Bit, as simple as it gets.
 
-bit-config is a NodeJS application configuration library. The library will scan the configuration directory for valid configuration files (files with a valid extension i.e. 'json') and load them into the configuration instance. Configuration properties can be accessed using dot notation (i.e. 'a.dot.notation').
-
-Configuration file types supported:
-* json
+bit-logger is a dependency package for using a global logger. The logger is an implementation of winston.Logger.
 
 ### Install
 ```
-npm install toka-io/bit-config --save
-```
-
-### Configuration Parameters
-```
-NODE_CONFIG_DIR   # Configuration directory, defaults to './config'
-NODE_CONFIG_TYPE  # Configuration file type, defaults to 'json'
+npm install toka-io/bit-logger --save
 ```
 
 ### Example
 ```
-const config = require('bit-config');
+const log = require('bit-logger');
 
-config.get('password.to.everything');
+log.info('INFO');
+log.warn('WARN');
+log.error('ERROR');
 ```
