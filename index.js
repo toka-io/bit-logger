@@ -1,12 +1,22 @@
 const winston = require('winston');
 const config = require('bit-config');
+const mkdirp = require('mkdirp');
+const path = require('path');
+
+const LOG_DIR = config.get('logDir');
+
+// Enable errors in log
 winston.emitErrs = true;
 
-let logger = new winston.Logger({
+// Create log directory if it doesn't exist
+if (!fs.existsSync(LOG_DIR))
+  mkdirp.sync(LOG_DIR);
+
+const logger = new winston.Logger({
     transports: [
         new winston.transports.File({
             level: 'info',
-            filename: config.get('logDir')+'/application.log',
+            filename: LOG_DIR+'/application.log',
             handleExceptions: true,
             json: true,
             maxsize: 5242880, // bytes
