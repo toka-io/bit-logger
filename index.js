@@ -1,7 +1,8 @@
 const winston = require('winston');
 const config = require('bit-config');
-const mkdirp = require('mkdirp');
+const fs = require('fs');
 const path = require('path');
+const mkdirp = require('mkdirp');
 
 const LOG_DIR = config.get('logDir');
 

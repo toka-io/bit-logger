@@ -18,7 +18,6 @@
   "dependencies": {
     "bit-config": "github:toka-io/bit-config",
     "mkdirp": "^0.5.1",
-    "path": "^0.12.7",
     "winston": "^2.4.0"
   }
 }
