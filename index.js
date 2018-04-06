@@ -43,6 +43,9 @@ const bitLogger = (p) => {
     info: (message) => {
       logger.info(prefix + ' ' +  message);
     },
+    debug: (message) => {
+      logger.debug(prefix + ' ' +  message);
+    },
     warn: (message) => {
       logger.warn(prefix + ' ' +  message);
     },
