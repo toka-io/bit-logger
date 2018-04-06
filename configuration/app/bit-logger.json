@@ -1,3 +1,7 @@
 {
-  "logDir": "./var/output/logs"
+  "logging": {
+    "directory": "./var/output/logs",
+    "level": "info",
+    "maxsize": 5242880
+  }
 }
