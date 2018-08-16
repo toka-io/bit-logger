@@ -9,9 +9,9 @@ npm install toka-io/bit-logger --save
 
 ### Example
 ```
-const log = require('bit-logger');
+const L = require('bit-logger');
 
-log.info('INFO');
-log.warn('WARN');
-log.error('ERROR');
+L.info('INFO');
+L.warn('WARN');
+L.error('ERROR');
 ```
