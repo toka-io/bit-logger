@@ -37,24 +37,33 @@ const logger = new winston.Logger({
   exitOnError: false
 });
 
-const bitLogger = (p) => {
-  const prefix = (p) ? p : '';
-  const wrapper = {
-    info: (message) => {
-      logger.info(prefix + ' ' +  message);
+/**
+ * This logger is a wrapper around winston. It gives the additional feature of setting {} placeholders 
+ * in the log string to make it easier for string interpolation
+ */
+const bitLogger = () => {
+  return {
+    info: (message, ...fillers) => {
+      if (fillers.length > 0) 
+        fillers.map(filler => message = message.replace("{}", filler));
+      logger.info(message);
     },
-    debug: (message) => {
-      logger.debug(prefix + ' ' +  message);
+    debug: (message, ...fillers) => {
+      if (fillers.length > 0) 
+        fillers.map(filler => message = message.replace("{}", filler));
+      logger.debug(message);
     },
-    warn: (message) => {
-      logger.warn(prefix + ' ' +  message);
+    warn: (message, ...fillers) => {
+      if (fillers.length > 0) 
+        fillers.map(filler => message = message.replace("{}", filler));
+      logger.warn(message);
     },
-    error: (message) => {
-      logger.error(prefix + ' ' +  message);
+    error: (message, ...fillers) => {
+      if (fillers.length > 0) 
+        fillers.map(filler => message = message.replace("{}", filler));
+      logger.error(message);
     }
   };
-
-  return wrapper;
 }
 
 module.exports = bitLogger;
